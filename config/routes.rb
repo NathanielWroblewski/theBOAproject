@@ -1,4 +1,10 @@
 ProjectBOA::Application.routes.draw do
+  root to: 'users#new'
+  resources :users, only: [:new, :create]
+  resources :sessions, only: :create
+  get '/sessions/destroy' => 'sessions#destroy', :as => 'logout'
+  resources :password_resets, :only => [:new, :create, :edit, :update]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +45,7 @@ ProjectBOA::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

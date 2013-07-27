@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130727032600) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
+    t.string "password_reset_token"
   end
 
 end

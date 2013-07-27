@@ -25,10 +25,11 @@ class SessionsController < ApplicationController
 
   def set_session(id)
     session[:id] = id
-    redirect_to root_url
+    redirect_to root_url, flash: { notice: 'Logged in.' }
   end
 
   def bounce
     flash[:notice] = 'Invalid email or password.'
-    render 'user#new'
+    redirect_to root_url
   end
+end
