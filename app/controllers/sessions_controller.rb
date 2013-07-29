@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :eject
+
   def create
     user = User.find_by_email(params[:email])
     login(user, params[:password])
@@ -25,7 +27,7 @@ class SessionsController < ApplicationController
 
   def set_session(id)
     session[:id] = id
-    redirect_to root_url, flash: { notice: 'Logged in.' }
+    redirect_to positions_path, flash: { notice: 'Logged in.' }
   end
 
   def bounce

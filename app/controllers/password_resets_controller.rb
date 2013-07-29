@@ -1,4 +1,6 @@
 class PasswordResetsController < ApplicationController
+  skip_before_filter :eject
+
   def new
   end
 

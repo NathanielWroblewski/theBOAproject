@@ -1,0 +1,53 @@
+<h1>Positions</h1>
+
+<h2>Neutral</h2>
+<ul>
+  <% @neutral.each do |position| %>
+    <li><%= position.name %></li>
+      <ul>
+        <% position.sub_positions.each do |sub_position| %>
+          <li><%= sub_position.name %></li>
+            <ul>
+              <% sub_position.grips.each do |grip| %>
+                <li><%= link_to grip.name, grip %></li>
+              <% end %>
+            </ul>
+        <% end %>
+      </ul>
+  <% end %>
+</ul>
+
+<h2>Top</h2>
+<ul>
+  <% @top.each do |position| %>
+    <li><%= position.name %></li>
+      <ul>
+        <% position.sub_positions.each do |sub_position| %>
+          <li><%= sub_position.name %></li>
+          <ul>
+              <% sub_position.grips.each do |grip| %>
+                <li><%= link_to grip.name, grip %></li>
+              <% end %>
+            </ul>
+        <% end %>
+      </ul>
+  <% end %>
+</ul>
+
+<h2>Bottom</h2>
+<ul>
+  <% @bottom.each do |position| %>
+    <li><%= position.name %></li>
+      <ul>
+        <% position.sub_positions.each do |sub_position| %>
+          <li><%= sub_position.name %></li>
+          <ul>
+              <% sub_position.grips.each do |grip| %>
+                <li><%= link_to grip.name, grip %></li>
+              <% end %>
+            </ul>
+        <% end %>
+      </ul>
+  <% end %>
+</ul>
+

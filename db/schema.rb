@@ -11,15 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130727032600) do
+ActiveRecord::Schema.define(version: 20130728064023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "grips", force: true do |t|
+    t.string  "name",            null: false
+    t.integer "sub_position_id"
+  end
+
+  create_table "instructional_videos", force: true do |t|
+    t.string  "url"
+    t.string  "title"
+    t.text    "description"
+    t.integer "major_category_id"
+    t.integer "grip_id"
+  end
+
+  create_table "major_categories", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "positions", force: true do |t|
+    t.string  "name", null: false
+    t.boolean "top"
+  end
+
+  create_table "sub_positions", force: true do |t|
+    t.string  "name",        null: false
+    t.integer "position_id", null: false
+  end
+
   create_table "users", force: true do |t|
-    t.string "username"
+    t.string "username",             null: false
     t.string "password_digest"
-    t.string "email"
+    t.string "email",                null: false
     t.string "password_reset_token"
   end
 

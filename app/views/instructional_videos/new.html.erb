@@ -1,0 +1,6 @@
+<h1>Upload a Video</h1>
+
+<%= form_for @instructional, :url => instructional_videos_path, :html => { :multipart => true } do |f| %>
+  <%= f.file_field :source %><br>
+  <%= f.submit 'Upload' %>
+<% end %>

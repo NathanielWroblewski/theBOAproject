@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_filter :eject
 
   def new
     @user = User.new
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = 'Signed up!'
       session[:id] = @user.id
-      redirect_to root_url
+      redirect_to positions_path
     else
       render :new
     end
