@@ -5,6 +5,12 @@ class Users < ActiveRecord::Migration
       t.string :password_digest
       t.string :email, null: false
       t.string :password_reset_token
+      t.string :first_name
+      t.string :last_name
+      t.string :rank
+      t.string :gym
+      t.text :about
+      t.string :location
     end
   end
 end

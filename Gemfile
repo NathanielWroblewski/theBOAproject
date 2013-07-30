@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
-
+gem 'carrierwave'
+gem 'carrierwave_direct', git: 'git://github.com/dwilkie/carrierwave_direct.git'
+gem 'fog'
+gem 'sidekiq'
+gem 'redis'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 

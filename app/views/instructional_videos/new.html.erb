@@ -1,6 +1,21 @@
-<h1>Upload a Video</h1>
-
-<%= form_for @instructional, :url => instructional_videos_path, :html => { :multipart => true } do |f| %>
-  <%= f.file_field :source %><br>
-  <%= f.submit 'Upload' %>
+<h1>Information for your uploaded video</h1>
+<%= form_for @instructional do |f| %>
+  <% if @instructional.errors.any? %>
+    <h2><%= pluralize(@instructional.errors.count, '  error') %> prohibited this video from being saved.  </h2>
+    <ul>
+      <% @instructional.errors.full_messages.each do |  msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :key %>
+  <p>File: <%= @instructional.instructional_name %></p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :major_category, 'Category' %>
+  <%= f.select :major_category, options_for_select(['Sweep', 'Submission', 'Guard Pass', 'Reversal']) %>
+  <%= f.submit %>
 <% end %>

@@ -22,9 +22,12 @@ ActiveRecord::Schema.define(version: 20130728064023) do
   end
 
   create_table "instructional_videos", force: true do |t|
+    t.string  "instructional"
+    t.string  "InstructionalUploader"
     t.string  "url"
     t.string  "title"
     t.text    "description"
+    t.boolean "video_processed"
     t.integer "major_category_id"
     t.integer "grip_id"
   end
@@ -48,6 +51,12 @@ ActiveRecord::Schema.define(version: 20130728064023) do
     t.string "password_digest"
     t.string "email",                null: false
     t.string "password_reset_token"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "rank"
+    t.string "gym"
+    t.text   "about"
+    t.string "location"
   end
 
 end

@@ -1,6 +1,6 @@
 # Major Categories
 
-categories = ['Sweep', 'Submission', 'Guard Pass', 'Reversal', '']
+categories = ['Sweep', 'Submission', 'Guard Pass', 'Reversal']
 
 categories.each do |category|
   MajorCategory.create(name: category)

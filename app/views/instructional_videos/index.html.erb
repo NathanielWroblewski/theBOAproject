@@ -1,0 +1,6 @@
+<h1>Upload a Video</h1>
+
+<%= direct_upload_form_for @uploader do |f| %>
+  <%= f.file_field :instructional %>
+  <%= f.submit 'Upload Video'%>
+<% end %>
