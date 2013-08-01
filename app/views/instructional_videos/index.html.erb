@@ -1,6 +1,6 @@
-<h1>Upload a Video</h1>
-
-<%= direct_upload_form_for @uploader do |f| %>
-  <%= f.file_field :instructional %>
-  <%= f.submit 'Upload Video'%>
-<% end %>
+<%= multipart_uploader_form(input_name: 'uploader',
+                            uploader: 'InstructionalVideoUploader',
+                            button_class: 'submit-button',
+                            button_text: 'Upload selected videos',
+                            html: %Q{<button class="upload-button">Select videos</button>},
+                            types: %w(wmv avi mp4 mkv mov mpeg)) %>

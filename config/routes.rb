@@ -1,4 +1,5 @@
 ProjectBOA::Application.routes.draw do
+  mount S3Multipart::Engine => "/s3_multipart"
   root to: 'users#new'
   get '/sessions/destroy' => 'sessions#destroy', as: 'logout'
   resources :users, only: [:new, :create]
