@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130728064023) do
+ActiveRecord::Schema.define(version: 20130801201835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,14 +22,12 @@ ActiveRecord::Schema.define(version: 20130728064023) do
   end
 
   create_table "instructional_videos", force: true do |t|
-    t.string  "instructional"
-    t.string  "InstructionalUploader"
     t.string  "url"
     t.string  "title"
     t.text    "description"
-    t.boolean "video_processed"
     t.integer "major_category_id"
     t.integer "grip_id"
+    t.string  "uploader"
   end
 
   create_table "major_categories", force: true do |t|
@@ -39,6 +37,17 @@ ActiveRecord::Schema.define(version: 20130728064023) do
   create_table "positions", force: true do |t|
     t.string  "name", null: false
     t.boolean "top"
+  end
+
+  create_table "s3_multipart_uploads", force: true do |t|
+    t.string   "location"
+    t.string   "upload_id"
+    t.string   "key"
+    t.string   "name"
+    t.string   "uploader"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sub_positions", force: true do |t|

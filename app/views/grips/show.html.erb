@@ -1,7 +1,5 @@
 <h2><%= @grip.sub_position.position.name %> > <%= @grip.sub_position.name %> > <%= @grip.name %></h2>
 <br>
-<iframe src="http://player.vimeo.com/video/71230093" width="400px" height="300px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-<br>
 <ul>
   <% @grip.instructional_videos.each do |vid| %>
     <ul>
@@ -10,7 +8,10 @@
       <li>Description: <%= vid.description %>
       <li>Category: <%= vid.major_category.name %>
       <li>Video:
-        <iframe src="http://player.vimeo.com/video/<%= vid.url %>" width="400px" height="300px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <video width="400" height="300" controls>
+          <source src="https://s2e7pa89pb6x71.cloudfront.net/boaproject/Far+Leg+Calf+Slicer+from+X-Guard.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </li>
     </ul>
   <% end %>

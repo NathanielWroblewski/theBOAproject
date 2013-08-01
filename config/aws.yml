@@ -1,0 +1,5 @@
+development:
+  access_key_id: "AKIAJM2MR2VOK5BYICPQ"
+  secret_access_key: "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"
+  bucket: "boaproject"
+  revision: "0.0.10.4"

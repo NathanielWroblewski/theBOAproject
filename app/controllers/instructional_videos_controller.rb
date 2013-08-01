@@ -1,12 +1,11 @@
 class InstructionalVideosController < ApplicationController
 
   def index
-    @uploader = InstructionalVideo.new.instructional
-    @uploader.success_action_redirect = new_instructional_video_url
+    @instructional = InstructionalVideo.new
   end
 
   def new
-    @instructional = InstructionalVideo.new(key: params[:key])
+    redirect_to positions_path
   end
 
   def create
