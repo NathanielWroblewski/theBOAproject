@@ -26,7 +26,6 @@ class InstructionalVideoUploader < ApplicationController
   #
   on_begin do |upload, session|
     # Code to be evaluated when upload begins.
-    p "begin"
     video = InstructionalVideo.create(name: upload.name)
     upload.instructional_video = video
     upload.update_attributes(location: "Unknown")
@@ -35,7 +34,6 @@ class InstructionalVideoUploader < ApplicationController
 
   # See above comment. Called when the upload has successfully completed
   on_complete do |upload, session|
-    p "done"
     # Code to be evaluated when upload completes
   end
 

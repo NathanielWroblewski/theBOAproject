@@ -1,43 +1,38 @@
 source 'https://rubygems.org'
-gem 's3_multipart', git: 'https://github.com/NathanielWroblewski/s3_multipart'
-gem 'underscore-rails'
-gem 'jquery-rails'
-gem 'protected_attributes'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+ruby '2.0.0'
+
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'pg'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'better_errors'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
+gem 'coffee-rails', '~> 4.0.0'
+gem 'guard'
+gem 'guard-rspec'
+gem 'jbuilder'
 gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'pg'
+gem 'protected_attributes'
+gem 's3_multipart', git: 'https://github.com/NathanielWroblewski/s3_multipart'
+gem 'sass-rails'
 gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'uglifier'
+gem 'underscore-rails'
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
- gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'capybara'
+gem 'capybara-webkit', github: 'thoughtbot/capybara-webkit', branch: 'master'
+gem 'database_cleaner'
+gem 'factory_girl_rails'
+gem 'parallel_tests'
+gem 'rspec-core'
+gem 'rspec-expectations'
+gem 'rspec-mocks', github: 'rspec/rspec-mocks'
+gem 'shoulda-matchers'
+# gem 'zeus'
 
 # Use unicorn as the app server
 # gem 'unicorn'
