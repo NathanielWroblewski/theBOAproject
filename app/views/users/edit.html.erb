@@ -1,0 +1,36 @@
+<%= form_for current_user do |f| %>
+
+  <% if current_user.errors.any? %>
+    <% current_user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    <% end %>
+
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :rank %>
+    <%= f.text_field :rank %>
+  </p>
+  <p>
+    <%= f.label :gym %>
+    <%= f.text_field :gym %>
+  </p>
+  <p>
+    <%= f.label :about %>
+    <%= f.text_field :about %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
