@@ -17,6 +17,8 @@
 //= require underscore
 //= require jquery
 //= require s3_multipart/lib
+//= require foundation
+$(document).foundation();
 
 $(function() {
   $(".submit-button").click(function() { // The button class passed into multipart_uploader_form (see "Getting Started")
@@ -46,3 +48,5 @@ $(function() {
     });
   });
 });
+
+$(function(){ $(document).foundation(); });

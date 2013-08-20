@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   skip_before_filter :eject
 
   def new
+    redirect_to positions_path if session[:id]
     @user = User.new
   end
 
@@ -24,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    p params
     user = User.find(session[:id])
     user.update_attributes(params[:user])
     redirect_to user, notice: 'Profile updated.'

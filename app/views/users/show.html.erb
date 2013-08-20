@@ -4,12 +4,30 @@
 
 <h1>Profile</h1>
 <ul>
-  <li><%= @user.username %></li>
-  <li><%= @user.first_name %></li>
-  <li><%= @user.last_name %></li>
-  <li><%= @user.rank %></li>
-  <li><%= @user.gym %></li>
-  <li><%= @user.about %></li>
+  <li>
+    <p>Username: </p>
+    <p><%= @user.username %></p>
+  </li>
+  <li>
+    <p>First Name: </p>
+    <p><%= @user.first_name %></p>
+  </li>
+  <li>
+    <p>Last Name: </p>
+    <p><%= @user.last_name %></p>
+  </li>
+  <li>
+    <p>Rank: </p>
+    <p><%= @user.rank %></p>
+  </li>
+  <li>
+    <p>Gym: </p>
+    <p><%= @user.gym %></p>
+  </li>
+  <li>
+    <p>About: </p>
+    <p><%= @user.about %></p>
+  </li>
 </ul>
 
 <% if @user == current_user %>
